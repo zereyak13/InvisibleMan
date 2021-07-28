@@ -1285,6 +1285,30 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1060913606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2807496443740165760, guid: 28adfa93ab00ccb4689e28d6583626f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630085585167439109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1060913611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060913606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.68235296, g: 1, b: 0.627451, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 1
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1073342922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,6 +2027,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4217807748335079994, guid: 28adfa93ab00ccb4689e28d6583626f6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a3585ea63f9d824d8ade4190dc7fecd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28adfa93ab00ccb4689e28d6583626f6, type: 3}
 --- !u!4 &4261198805356878143 stripped
