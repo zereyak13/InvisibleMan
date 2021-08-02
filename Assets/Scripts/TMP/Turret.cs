@@ -14,13 +14,16 @@ public class Turret : MonoBehaviour
     [SerializeField] private Transform upperSideOfTurret;
     [SerializeField] private Transform firePos;
 
-    private bool turretTurningRight = true;
+    [SerializeField] private float rotateDuration = 3f;
+    private float timerToRotate;
 
-    private const float ROTATION_LIMIT = .25f;// Quaternion 0-1 arası
+    private bool rotateDir;
+
     private const float ROTATE_SPEED = 20;
     void Start()
     {
         Turret2Animator = GetComponent<Animator>();
+        timerToRotate = rotateDuration / 2;
     }
 
     // Update is called once per frame
@@ -33,21 +36,21 @@ public class Turret : MonoBehaviour
 
     private void RotateTurret()
     {
-        if (turretTurningRight)
+        timerToRotate -= Time.deltaTime;
+
+        if(timerToRotate < 0)
+        {
+            timerToRotate = rotateDuration;
+            rotateDir = !rotateDir;
+        }
+
+        if (rotateDir)
         {
             upperSideOfTurret.transform.Rotate(Vector3.forward * ROTATE_SPEED * Time.deltaTime);
-            if (upperSideOfTurret.transform.rotation.z > ROTATION_LIMIT)
-            {
-                turretTurningRight = false;
-            }
-        }       
+        }
         else
         {
             upperSideOfTurret.transform.Rotate(-Vector3.forward * ROTATE_SPEED * Time.deltaTime);
-            if (upperSideOfTurret.transform.rotation.z < -ROTATION_LIMIT)
-            {
-                turretTurningRight = true;
-            }
         }
     }
 
