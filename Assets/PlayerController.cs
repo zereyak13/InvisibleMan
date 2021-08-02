@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
 
 
     private StateHandler stateHandler;
-    private StateHandler.PlayerState playerState;
     private Animator playerAnimator;
 
     private Rigidbody playerRB;
@@ -35,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         if (stateHandler.playerCurState == StateHandler.PlayerState.Running)
         {
-            playerRB.MovePosition(transform.position + moveDir * MOVE_SPEED * Time.deltaTime);
+            playerRB.position += moveDir * MOVE_SPEED * Time.deltaTime;
             //transform.rotation = Quaternion.LookRotation(moveDir);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir), ROTATION_SPEED);
             //playerRB.velocity = moveDir * MOVE_SPEED;
