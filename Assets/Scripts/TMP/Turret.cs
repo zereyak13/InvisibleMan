@@ -8,18 +8,23 @@ public class Turret : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
    
     private Animator Turret2Animator;
-    private float timerToFire = 0.4f , maxTimeToFire =1f;
+    private float timerToFire = 0.4f;
 
     //Turret Rotation Var
     [SerializeField] private Transform upperSideOfTurret;
     [SerializeField] private Transform firePos;
 
-    [SerializeField] private float rotateDuration = 3f;
     private float timerToRotate;
 
     private bool rotateDir;
 
     private const float ROTATE_SPEED = 20;
+    //Options for Designer
+    [Header("Turret Options")]
+    [SerializeField] private float rotateDuration = 3f;
+    [SerializeField] private float TurretPower = 10;
+    [SerializeField] private float maxTimeToFire;
+
     void Start()
     {
         Turret2Animator = GetComponent<Animator>();
@@ -61,7 +66,7 @@ public class Turret : MonoBehaviour
         if (timerToFire <0)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePos.position , Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().AddForce(firePos.forward * 10, ForceMode.Impulse);
+            bullet.GetComponent<Rigidbody>().AddForce(firePos.forward * TurretPower, ForceMode.Impulse);
 
             Turret2Animator.SetTrigger("fire");
 

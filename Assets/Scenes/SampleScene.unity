@@ -2485,6 +2485,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132148223196485, guid: a9b93ab9c9b06f64c98c42f45f199776,
         type: 3}
+      propertyPath: maxTimeToFire
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132148223196485, guid: a9b93ab9c9b06f64c98c42f45f199776,
+        type: 3}
       propertyPath: ROTATION_LIMIT
       value: 30
       objectReference: {fileID: 0}
