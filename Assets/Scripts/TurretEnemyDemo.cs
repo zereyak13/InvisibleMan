@@ -9,14 +9,15 @@ namespace IndieMarc.EnemyVision
     /// </summary>
 
     [RequireComponent(typeof(EnemyVision))]
-    public class EnemyDemo : MonoBehaviour
+    public class TurretEnemyDemo : MonoBehaviour
     {
         public GameObject exclama_prefab;
         public GameObject death_fx_prefab;
 
+        [SerializeField] private Transform upperSideOfTurret;
         private EnemyVision enemy;
         private Animator animator;
-        
+
         void Start()
         {
             animator = GetComponentInChildren<Animator>();
@@ -52,13 +53,18 @@ namespace IndieMarc.EnemyVision
             //Add code for when target get seen and enemy get alerted, 0=touch, 1=near, 2=far, 3=other
             Debug.Log(target.gameObject.name);
             Debug.Log(distance);
+
+            Vector3 moveDir = target.transform.position - upperSideOfTurret.transform.position;
+            upperSideOfTurret.transform.rotation = Quaternion.Slerp(upperSideOfTurret.transform.rotation, Quaternion.LookRotation(moveDir), 0.15f);
         }
 
         private void OnDetect(VisionTarget target, int distance)
         {
             //Add code for when the enemy detect you as a threat (and start chasing), 0=touch, 1=near, 2=far, 3=other
-            Debug.Log(target.gameObject.name);
-            Debug.Log(distance);
+            //Debug.Log(target.gameObject.name);
+            //Debug.Log(distance);
+
+           
         }
 
         private void OnTouch(VisionTarget target)
@@ -68,7 +74,7 @@ namespace IndieMarc.EnemyVision
 
         private void OnDeath()
         {
-            if(death_fx_prefab)
+            if (death_fx_prefab)
                 Instantiate(death_fx_prefab, transform.position + Vector3.up * 0.5f, death_fx_prefab.transform.rotation);
         }
     }

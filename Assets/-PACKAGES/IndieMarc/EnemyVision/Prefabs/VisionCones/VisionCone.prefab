@@ -46,7 +46,7 @@ MonoBehaviour:
   target: {fileID: 0}
   vision_angle: 30
   vision_range: 3
-  vision_near_range: 3
+  vision_near_range: 1
   obstacle_mask:
     serializedVersion: 2
     m_Bits: 4294967295

@@ -15,8 +15,8 @@ namespace IndieMarc.EnemyVision
 
         [Header("Vision")]
         public float vision_angle = 30f;
-        public float vision_range = 5f;
-        public float vision_near_range = 3f;
+        public float vision_range = 3f; //5
+        public float vision_near_range = 1f;//3
         public LayerMask obstacle_mask = ~(0);
         public bool show_two_levels = false;
 
