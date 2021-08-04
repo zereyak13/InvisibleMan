@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4463916143488167922}
   - component: {fileID: 2028081714120522792}
   - component: {fileID: 4965244613729001787}
+  - component: {fileID: 2450664252897166604}
   m_Layer: 0
   m_Name: Turret2Bullet
   m_TagString: Untagged
@@ -89,7 +90,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3830713470094859768}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -110,3 +111,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2450664252897166604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830713470094859768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aade6bf1404419840af3e1001faeb511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 3622211513984899615, guid: e10170c00c7f2e6439f4ce5e20fa5a83,
+    type: 3}

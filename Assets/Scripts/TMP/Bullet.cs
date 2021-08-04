@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] GameObject explosionEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,11 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //Splash effect
+        GameObject explosionEffectGO = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        explosionEffectGO.transform.SetParent(this.gameObject.transform);
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+
+
+        Destroy(gameObject, 2f);
     }
 }
