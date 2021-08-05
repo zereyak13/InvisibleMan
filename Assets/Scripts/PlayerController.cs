@@ -12,22 +12,25 @@ public class PlayerController : MonoBehaviour
     private StateHandler stateHandler;
     private Animator playerAnimator;
 
+    private Joystick joystick;
     private Rigidbody playerRB;
     private Vector3 moveDir;
    
     void Start()
     {
+        joystick = FindObjectOfType<Joystick>();
         playerRB = gameObject.GetComponent<Rigidbody>();
         stateHandler = gameObject.GetComponent<StateHandler>();
         playerAnimator = gameObject.GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     private void Update()
     {
-        PlayerInputs();
+        //PlayerInputsEditor();
+        PlayerInputsJoystick();
         SetPlayerAnim();
-
 
     }
     private void FixedUpdate()
@@ -42,7 +45,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void PlayerInputs()
+    private void PlayerInputsEditor()
     {
         float horInput = Input.GetAxisRaw("Horizontal");
         float verInput = Input.GetAxisRaw("Vertical");
@@ -57,8 +60,26 @@ public class PlayerController : MonoBehaviour
             stateHandler.playerCurState = StateHandler.PlayerState.Idle;
             playerRB.velocity = Vector3.zero;
         }
-
     }
+    private void PlayerInputsJoystick()
+    {
+        float horInput = joystick.Horizontal;
+        float verInput = joystick.Vertical;
+
+
+        moveDir = new Vector3(horInput, 0, verInput).normalized;
+        if (moveDir.magnitude != 0)
+        {
+            stateHandler.playerCurState = StateHandler.PlayerState.Running;
+        }
+        else
+        {
+            stateHandler.playerCurState = StateHandler.PlayerState.Idle;
+            playerRB.velocity = Vector3.zero;
+        }
+    }
+
+
     private void SetPlayerAnim()
     {
         switch (stateHandler.playerCurState)
