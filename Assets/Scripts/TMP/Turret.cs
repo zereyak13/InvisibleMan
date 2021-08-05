@@ -65,7 +65,14 @@ public class Turret : MonoBehaviour
 
         if (timerToFire <0)
         {
+            Color curColor = new Color(
+                                   Random.Range(0f, 1f),
+                                   Random.Range(0f, 1f),
+                                   Random.Range(0f, 1f)
+                                   );
+
             GameObject bullet = Instantiate(bulletPrefab, firePos.position , Quaternion.identity);
+            bullet.GetComponent<MeshRenderer>().material.SetColor("_Color", curColor);
             bullet.GetComponent<Rigidbody>().AddForce(firePos.forward * TurretPower, ForceMode.Impulse);
 
             Turret2Animator.SetTrigger("fire");
