@@ -21,6 +21,7 @@ public class CollisionPainter : MonoBehaviour
 
     private void HandleCollision(Collision collision)
     {
+        //ORİGİNAL
         foreach (ContactPoint contact in collision.contacts)
         {
             PaintTarget paintTarget = contact.otherCollider.GetComponent<PaintTarget>();
@@ -30,5 +31,13 @@ public class CollisionPainter : MonoBehaviour
                 PaintTarget.PaintObject(paintTarget, contact.point, contact.normal, brush);
             }
         }
+
+        //ContactPoint contact = collision.contacts[0];
+        //PaintTarget paintTarget = contact.otherCollider.GetComponent<PaintTarget>();
+        //if (paintTarget != null)
+        //{
+        //    if (RandomChannel) brush.splatChannel = Random.Range(0, 4);
+        //    PaintTarget.PaintObject(paintTarget, contact.point, contact.normal, brush);
+        //}
     }
 }

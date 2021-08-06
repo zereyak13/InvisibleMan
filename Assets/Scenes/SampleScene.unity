@@ -220,80 +220,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1594002506}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &322801226
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639006674233904870, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4645133859509980552, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyPolice (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4645133859509980552, guid: ccc12316d8fa111458153474448bd12e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ccc12316d8fa111458153474448bd12e, type: 3}
 --- !u!1001 &326812091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -301,6 +227,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7903627691241919400, guid: e934086468a158c42b1781040db80a6f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9fd71aca193b5b04eaddc0d9492fc430, type: 2}
     - target: {fileID: 7903627691241919402, guid: e934086468a158c42b1781040db80a6f,
         type: 3}
       propertyPath: m_Name
@@ -456,6 +387,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380529198}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &385847672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7903627691241919402, guid: e934086468a158c42b1781040db80a6f,
+    type: 3}
+  m_PrefabInstance: {fileID: 326812091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &385847677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385847672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ed8ad4fc591514692edfe1dbb12e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paintTextureSize: 256
+  SetupOnStart: 0
+  PaintAllSplats: 0
+  debugTexture: 0
+  splatTex: {fileID: 0}
+  splatTexPick: {fileID: 0}
 --- !u!1001 &387934547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1253,7 +1208,7 @@ PrefabInstance:
     - target: {fileID: 4719799014393801383, guid: a9b93ab9c9b06f64c98c42f45f199776,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: -39.7
       objectReference: {fileID: 0}
     - target: {fileID: 4719799014393801383, guid: a9b93ab9c9b06f64c98c42f45f199776,
         type: 3}

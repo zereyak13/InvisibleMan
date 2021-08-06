@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2028081714120522792}
   - component: {fileID: 4965244613729001787}
   - component: {fileID: 2450664252897166604}
+  - component: {fileID: -1818729754624678590}
+  - component: {fileID: 35385622898634453}
   m_Layer: 0
   m_Name: Turret2Bullet
   m_TagString: Untagged
@@ -61,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e0ecfd1ca2383a54f906f66752a28aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,7 +92,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3830713470094859768}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -123,5 +125,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aade6bf1404419840af3e1001faeb511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brush:
+    splatTexture: {fileID: 2800000, guid: 70b110d2da8a5fe47b52682ec2f4b775, type: 3}
+    splatsX: 4
+    splatsY: 4
+    splatIndex: -1
+    splatScale: 1
+    splatRandomScaleMin: 1
+    splatRandomScaleMax: 1
+    splatRotation: 0
+    splatRandomRotation: 180
+    splatChannel: 0
+  RandomChannel: 0
   explosionEffect: {fileID: 3622211513984899615, guid: e10170c00c7f2e6439f4ce5e20fa5a83,
     type: 3}
+--- !u!114 &-1818729754624678590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830713470094859768}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 826a7e1121135ea4fa76274bc774e861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brush:
+    splatTexture: {fileID: 2800000, guid: f66159b1d87ac7c42bb17699914f00a6, type: 3}
+    splatsX: 1
+    splatsY: 1
+    splatIndex: -1
+    splatScale: 1
+    splatRandomScaleMin: 1
+    splatRandomScaleMax: 1
+    splatRotation: 0
+    splatRandomRotation: 180
+    splatChannel: 0
+  RandomChannel: 0
+--- !u!65 &35385622898634453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830713470094859768}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_Center: {x: 0, y: 0, z: 0}
