@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using IndieMarc.EnemyVision;
 public class Bullet : MonoBehaviour
 {
     //public Brush brush;
@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     ParticleSystem.MainModule settings;
 
     Material bulletMat;
-
+    
     private void Awake()
     {
         settings = explosionEffect.transform.Find("SmokeClouds").GetComponent<ParticleSystem>().main;
@@ -38,6 +38,12 @@ public class Bullet : MonoBehaviour
         //explosionEffectGO.transform.SetParent(this.gameObject.transform);
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        //Playere çarparsa görülebilir yap.
+        if (collision.gameObject.CompareTag(Defs.Instance.playerTag))
+        {
+            GameObject.FindGameObjectWithTag(Defs.Instance.playerTag).gameObject.GetComponent<VisionTarget>().visible = true;
+        }
+        
 
         Destroy(gameObject, 2f);
     }
