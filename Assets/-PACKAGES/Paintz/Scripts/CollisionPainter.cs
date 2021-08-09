@@ -21,6 +21,7 @@ public class CollisionPainter : MonoBehaviour
 
     private void HandleCollision(Collision collision)
     {
+        Destroy(gameObject,0.02f);
         //ORİGİNAL
         foreach (ContactPoint contact in collision.contacts)
         {

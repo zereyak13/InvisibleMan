@@ -186,7 +186,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 0.85294116, g: 0.85294116, b: 0.85294116, a: 1}
-      maxColor: {r: 0.47326213, g: 0.9945593, b: 0.22194839, a: 1}
+      maxColor: {r: 0, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14229,6 +14229,7 @@ GameObject:
   - component: {fileID: 3622211513999814553}
   - component: {fileID: 3622211514000678373}
   - component: {fileID: 3622211513979864809}
+  - component: {fileID: -8956661845539318320}
   m_Layer: 0
   m_Name: NukeExplosionBlue
   m_TagString: Untagged
@@ -19056,3 +19057,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &-8956661845539318320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622211513984899615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f201155980af6ff47802fdd86daae23a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
