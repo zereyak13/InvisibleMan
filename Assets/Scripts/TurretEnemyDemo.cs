@@ -14,12 +14,18 @@ namespace IndieMarc.EnemyVision
         public GameObject exclama_prefab;
         public GameObject death_fx_prefab;
 
-        [SerializeField] private Transform upperSideOfTurret;
         private EnemyVision enemy;
         private Animator animator;
 
+        private Animator turret1Animator;
+        [SerializeField] private Transform upperSideOfTurret;
+        [SerializeField] private Transform firepos;
+        public Brush brush;
+
         void Start()
         {
+            turret1Animator = GetComponent<Animator>();
+
             animator = GetComponentInChildren<Animator>();
             enemy = GetComponent<EnemyVision>();
             enemy.onDeath += OnDeath;
@@ -51,11 +57,16 @@ namespace IndieMarc.EnemyVision
         private void OnSeen(VisionTarget target, int distance)
         {
             //Add code for when target get seen and enemy get alerted, 0=touch, 1=near, 2=far, 3=other
-            Debug.Log(target.gameObject.name);
-            Debug.Log(distance);
+            //Debug.Log(target.gameObject.name);
+            //Debug.Log(distance);
 
             Vector3 moveDir = target.transform.position - upperSideOfTurret.transform.position;
-            upperSideOfTurret.transform.rotation = Quaternion.Slerp(upperSideOfTurret.transform.rotation, Quaternion.LookRotation(moveDir), 0.15f);
+            upperSideOfTurret.transform.rotation = Quaternion.Slerp(upperSideOfTurret.transform.rotation, Quaternion.LookRotation( moveDir) , 0.15f);
+
+
+            //FireToPlayer();
+
+
         }
 
         private void OnDetect(VisionTarget target, int distance)
@@ -76,6 +87,32 @@ namespace IndieMarc.EnemyVision
         {
             if (death_fx_prefab)
                 Instantiate(death_fx_prefab, transform.position + Vector3.up * 0.5f, death_fx_prefab.transform.rotation);
+        }
+
+        private float timerToFire = 1f;
+        private float maxTimeToFire = 1f;
+
+
+        private void FireToPlayer() //Zaten sadece player detect oluyor.
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(firepos.position, firepos.transform.forward, out hit, 1000))
+            {
+                timerToFire -= Time.deltaTime;
+
+                if (timerToFire < 0)
+                {
+                    Debug.Log("Fired");
+                    turret1Animator.SetTrigger("fire");
+
+                    PaintTarget paintTarget = hit.collider.gameObject.GetComponent<PaintTarget>();
+                    if (paintTarget != null)
+                    {
+                        PaintTarget.PaintObject(paintTarget, hit.point, hit.normal, brush);
+                    }
+                    timerToFire = maxTimeToFire;
+                }
+            }
         }
     }
 }
