@@ -7,6 +7,7 @@ public class CollisionPainter : MonoBehaviour
 
     private void Start()
     {
+
     }
 
     private void OnCollisionEnter(Collision collision)

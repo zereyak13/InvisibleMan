@@ -17,9 +17,11 @@ namespace IndieMarc.EnemyVision
         private EnemyVision enemy;
         private Animator animator;
 
+        ParticleSystem.MainModule settings;
         private Animator turret1Animator;
         [SerializeField] private Transform upperSideOfTurret;
         [SerializeField] private Transform firepos;
+        [SerializeField] private GameObject explosionEffect;
         public Brush brush;
 
         void Start()
@@ -64,7 +66,7 @@ namespace IndieMarc.EnemyVision
             upperSideOfTurret.transform.rotation = Quaternion.Slerp(upperSideOfTurret.transform.rotation, Quaternion.LookRotation( moveDir) , 0.15f);
 
 
-            //FireToPlayer();
+            FireToPlayer();
 
 
         }
@@ -108,6 +110,27 @@ namespace IndieMarc.EnemyVision
                     PaintTarget paintTarget = hit.collider.gameObject.GetComponent<PaintTarget>();
                     if (paintTarget != null)
                     {
+                        GameObject explosionEffectGO = Instantiate(explosionEffect, hit.collider.transform.position, Quaternion.identity);
+                      
+                        settings = explosionEffectGO.transform.Find("SmokeClouds").GetComponent<ParticleSystem>().main;
+                        int colorIndex = Random.Range(0, 4);
+                        switch (colorIndex)
+                        {
+                            case 0:
+                                settings.startColor = new Color(1.0f, 0.64f, 0.0f);
+                                break;
+                            case 1:
+                                settings.startColor = Color.red;
+                                break;
+                            case 2:
+                                settings.startColor = Color.green;
+                                break;
+                            case 3:
+                                settings.startColor = Color.blue;
+                                break;
+                        }
+
+                        brush.splatChannel = colorIndex;
                         PaintTarget.PaintObject(paintTarget, hit.point, hit.normal, brush);
                     }
                     timerToFire = maxTimeToFire;
