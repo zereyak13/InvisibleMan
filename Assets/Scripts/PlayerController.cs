@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         joystick = FindObjectOfType<Joystick>();
-        playerRB = gameObject.GetComponent<Rigidbody>();
+        playerRB = gameObject.transform.Find("Armature.006").GetComponent<Rigidbody>();
         stateHandler = gameObject.GetComponent<StateHandler>();
         playerAnimator = gameObject.GetComponent<Animator>();
 
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         if (stateHandler.playerCurState == StateHandler.PlayerState.Running)
         {
-            playerRB.position += moveDir * MOVE_SPEED * Time.deltaTime;
+            playerRB.transform.parent.position += moveDir * MOVE_SPEED * Time.deltaTime;
             //transform.rotation = Quaternion.LookRotation(moveDir);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir), ROTATION_SPEED);
             //playerRB.velocity = moveDir * MOVE_SPEED;

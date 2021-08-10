@@ -1,27 +1,14 @@
 fileFormatVersion: 2
-guid: 5920bd7dee8f19349b998c261355840e
+guid: 3ad8cd48979f04847be377a176bbd99a
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      74: -623603649343465320
-    second: Scene
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 08 - Default
-    second: {fileID: 2100000, guid: c03dedcf7401f574792a1299c802c458, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 08 - Default.001
-    second: {fileID: 2100000, guid: d45f01930a4afa14c8fd49b12149b70c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 08 - Default.002
-    second: {fileID: 2100000, guid: 98c264b2b4bbffd44b4ebb5d045aa327, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 5e6d43a749c6d4342bceb53261a5fbd1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -48,36 +35,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Scene
-      takeName: Scene
-      internalID: 0
-      firstFrame: 1
-      lastFrame: 16
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []

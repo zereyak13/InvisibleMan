@@ -1,12 +1,17 @@
 fileFormatVersion: 2
-guid: ff655e74f4247bb489cb1e893f40887c
+guid: 534a62469ea01fc408d30ae01bf38752
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -623603649343465320
     second: Scene
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fiskiye
+    second: {fileID: 2100000, guid: b4fa845bbafc6f54a958b8059e716f3a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
