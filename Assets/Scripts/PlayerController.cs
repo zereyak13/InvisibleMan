@@ -28,8 +28,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        PlayerInputsEditor();
-        //PlayerInputsJoystick();
+     
+
+        if (Application.platform == RuntimePlatform.WindowsEditor)
+            PlayerInputsEditor();
+        else if (Application.platform == RuntimePlatform.Android)
+            PlayerInputsJoystick();
+
         SetPlayerAnim();
 
     }
