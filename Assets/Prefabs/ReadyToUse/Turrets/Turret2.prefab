@@ -358,8 +358,8 @@ MonoBehaviour:
     type: 3}
   upperSideOfTurret: {fileID: 53948170727627453}
   firePos: {fileID: 2115534992}
-  rotateDuration: 3
-  TurretPower: 8
+  rotateDuration: 6
+  TurretPower: 10
   maxTimeToFire: 1
 --- !u!1 &5765573491214006189
 GameObject:

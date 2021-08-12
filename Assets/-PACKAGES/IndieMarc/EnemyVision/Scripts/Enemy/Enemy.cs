@@ -12,6 +12,7 @@ namespace IndieMarc.EnemyVision
         Patrol = 2,
         Alert = 5,
         Chase = 10,
+        Fire = 11,
         Confused = 15, //After lost track of target
         Wait=20,
     }

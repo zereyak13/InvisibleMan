@@ -33,7 +33,7 @@ namespace IndieMarc.EnemyVision
         {
             if (animator != null && enemy.GetEnemy() != null)
             {
-                animator.SetBool("Move", enemy.GetEnemy().GetMove().magnitude > 0.5f || enemy.GetEnemy().GetRotationVelocity() > 10f);
+                animator.SetBool("Move", enemy.GetEnemy().GetMove().magnitude > 0.5f || enemy.GetEnemy().GetRotationVelocity() > 10f && !animator.GetCurrentAnimatorStateInfo(0).IsName("CharacterFire"));
                 animator.SetBool("Run", enemy.GetEnemy().IsRunning());
             }
         }
@@ -57,8 +57,9 @@ namespace IndieMarc.EnemyVision
         private void OnDetect(VisionTarget target, int distance)
         {
             //Add code for when the enemy detect you as a threat (and start chasing), 0=touch, 1=near, 2=far, 3=other
-            Debug.Log(target.gameObject.name);
-            Debug.Log(distance);
+            //Debug.Log(target.gameObject.name);
+            //Debug.Log(distance);
+            animator.SetBool("Fire", true);
         }
 
         private void OnTouch(VisionTarget target)
