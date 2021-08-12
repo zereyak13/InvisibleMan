@@ -136,7 +136,7 @@ namespace IndieMarc.EnemyVision
             Vector3 dist_vect = (move_target - transform.position);
             move_vect = dist_vect.normalized * current_speed * Mathf.Min(dist_vect.magnitude, 1f);
 
-            if (use_pathfind && nav_agent && using_navmesh && dist_vect.magnitude > 1f)
+            if (use_pathfind && nav_agent && using_navmesh && dist_vect.magnitude > 1f ) // Harketi buraya ekle
             {
                 nav_agent.enabled = true;
                 nav_agent.speed = current_speed;
