@@ -4,17 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
+    public static HealthController Instance;
+
     public Image imageToFill;
 
-    void Update()
+
+    private void Awake()
     {
-        if (Input.GetKey(KeyCode.T))
-        {
-            imageToFill.fillAmount -= 0.01f;
-        }
-        else if (Input.GetKey(KeyCode.Y))
-        {
-            imageToFill.fillAmount += 0.01f;
-        }
+        Instance = this;
+    }
+    public void HealtDecrease()
+    {
+        imageToFill.fillAmount -= 0.2f;
+    }
+    public void HealthIncreased()
+    {
+        imageToFill.fillAmount += 0.2f;
     }
 }
