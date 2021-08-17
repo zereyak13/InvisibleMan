@@ -8,6 +8,12 @@ public class HealthController : MonoBehaviour
 
     public Image imageToFill;
 
+    private GameObject healthBar;
+    private void Start()
+    {
+        healthBar = GameObject.FindGameObjectWithTag(Defs.Instance.playerTag).transform.Find("HBCanvas").gameObject;
+        healthBar.SetActive(false);
+    }
 
     private void Awake()
     {
@@ -16,9 +22,19 @@ public class HealthController : MonoBehaviour
     public void HealtDecrease()
     {
         imageToFill.fillAmount -= 0.2f;
+        StartCoroutine(SetHealthBarVisibility());
     }
     public void HealthIncreased()
     {
         imageToFill.fillAmount += 0.2f;
+        StartCoroutine(SetHealthBarVisibility());
     }
+
+    IEnumerator SetHealthBarVisibility()
+    {
+        healthBar.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        healthBar.SetActive(false);
+    }
+
 }

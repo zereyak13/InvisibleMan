@@ -404,6 +404,26 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 890530682, guid: 22c4aa7e1f2115d45aa85ede7efdebe2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195165079642590, guid: 22c4aa7e1f2115d45aa85ede7efdebe2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317064166434920, guid: 22c4aa7e1f2115d45aa85ede7efdebe2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376402380144012, guid: 22c4aa7e1f2115d45aa85ede7efdebe2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724493511402550, guid: 22c4aa7e1f2115d45aa85ede7efdebe2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114685373733057000, guid: 22c4aa7e1f2115d45aa85ede7efdebe2,
         type: 3}
       propertyPath: m_FillAmount
@@ -482,7 +502,7 @@ PrefabInstance:
     - target: {fileID: 4342572153821009028, guid: 22c4aa7e1f2115d45aa85ede7efdebe2,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 492298183, guid: 22c4aa7e1f2115d45aa85ede7efdebe2, type: 3}

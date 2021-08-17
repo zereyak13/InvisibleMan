@@ -75,7 +75,7 @@ namespace IndieMarc.EnemyVision
             {
                 if (timerToFire < 0)
                 {
-                    if (hit.collider.gameObject.CompareTag(Defs.Instance.playerTag))
+                    if (hit.collider.transform.parent.CompareTag(Defs.Instance.playerTag))
                     {
                         Debug.Log("Fired");
                         timerToFire = maxTimeToFire;
