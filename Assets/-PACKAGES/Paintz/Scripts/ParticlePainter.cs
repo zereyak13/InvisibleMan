@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using IndieMarc.EnemyVision;
+
 
 public class ParticlePainter : MonoBehaviour
 {
@@ -19,9 +21,11 @@ public class ParticlePainter : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         PaintTarget paintTarget;
-        if (other.gameObject.name== "Player")
+        if (other.gameObject.CompareTag(Defs.Instance.playerTag))
         {
             paintTarget = other.transform.Find("Cube.006").GetComponent<PaintTarget>();
+
+            GameObject.FindGameObjectWithTag(Defs.Instance.playerTag).gameObject.GetComponent<VisionTarget>().visible = true;
         }
         else
         {

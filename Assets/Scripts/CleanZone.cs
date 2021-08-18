@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using IndieMarc.EnemyVision;
 
 public class CleanZone : MonoBehaviour
 {
@@ -13,9 +14,12 @@ public class CleanZone : MonoBehaviour
 
             target.ClearPaint();
 
+            GameObject.FindGameObjectWithTag(Defs.Instance.playerTag).gameObject.GetComponent<VisionTarget>().visible = false;
+
             Destroy(gameObject);
 
         }
+
     }
  
 }

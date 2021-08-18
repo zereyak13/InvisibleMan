@@ -9,16 +9,18 @@ public class HealthController : MonoBehaviour
     public Image imageToFill;
 
     private GameObject healthBar;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+     
     private void Start()
     {
         healthBar = GameObject.FindGameObjectWithTag(Defs.Instance.playerTag).transform.Find("HBCanvas").gameObject;
         healthBar.SetActive(false);
     }
 
-    private void Awake()
-    {
-        Instance = this;
-    }
     public void HealtDecrease()
     {
         imageToFill.fillAmount -= 0.2f;
