@@ -18,7 +18,16 @@ public class ParticlePainter : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        PaintTarget paintTarget = other.GetComponent<PaintTarget>();
+        PaintTarget paintTarget;
+        if (other.gameObject.name== "Player")
+        {
+            paintTarget = other.transform.Find("Cube.006").GetComponent<PaintTarget>();
+        }
+        else
+        {
+            paintTarget = other.transform.GetComponent<PaintTarget>();
+        }
+
         if (paintTarget != null)
         {
             if (RandomChannel) brush.splatChannel = Random.Range(0, 4);
